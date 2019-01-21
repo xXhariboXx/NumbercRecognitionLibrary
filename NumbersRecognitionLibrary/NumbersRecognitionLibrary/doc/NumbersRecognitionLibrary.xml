@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NumbersRecognitionLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:NumbersRecognitionLibrary.FeaturesExtraction.BarrFeatures">
+            <summary>
+            Contains logic for Barr Features  extraction.
+            </summary>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.FeaturesExtraction.BarrFeatures.#ctor(System.Drawing.Bitmap)">
+            <summary>
+            Initialize object and sets all fields
+            </summary>
+            <param name="image">Image to extract features from</param> 
+        </member>
+        <member name="M:NumbersRecognitionLibrary.FeaturesExtraction.BarrFeatures.ExtractFeatures(System.Drawing.Bitmap)">
+            <summary>
+            Method to extract Barr features from the image
+            </summary>
+            <param name="image">Image to extract features from</param>
+            <returns>List of barr features from the given image</returns>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.FeaturesExtraction.BarrFeatures.InitializeFields(System.Drawing.Bitmap)">
+            <summary>
+            Method to initialize fields in object
+            </summary>
+            <param name="image">Image to extract features from</param> 
+        </member>
+        <member name="M:NumbersRecognitionLibrary.FeaturesExtraction.BarrFeatures.CreateDirectionalPictures">
+            <summary>
+            Creates directional images as a step of Barr features extraction process
+            </summary>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.FeaturesExtraction.BarrFeatures.CalculateBarrFeatures(System.Drawing.Color[0:,0:],System.Int32,System.Int32)">
+            <summary>
+            Calculates Barr features from directional images
+            </summary>
+            <param name="imageGrayArray">Directional image in grayscale</param>
+            <param name="height">Height of the image</param>
+            <param name="width">Width of the image</param>
+            <returns>Returns an array of Barr features from the directional image</returns>
+        </member>
+        <member name="T:NumbersRecognitionLibrary.FeaturesExtraction.DistributionSequenceFeatureExtractor">
+            <summary>
+            Contains logic for Distribution Sequence feature extraction.
+            </summary>
+        </member>
+        <member name="P:NumbersRecognitionLibrary.FeaturesExtraction.DistributionSequenceFeatureExtractor.ZoneSize">
+            <summary>
+            Width and size of zone.
+            </summary>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.FeaturesExtraction.DistributionSequenceFeatureExtractor.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.FeaturesExtraction.DistributionSequenceFeatureExtractor.#ctor(System.Int32)">
+            <summary>
+            Initialize object with width and height of each zone of processed image.
+            </summary>
+            <param name="zoneSize">Width and height of zone.</param>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.FeaturesExtraction.DistributionSequenceFeatureExtractor.ExtractFeatures(System.Drawing.Bitmap)">
+            <summary>
+            Extracts features following Distribution Sequence algorithm.
+            </summary>
+            <param name="image">Image to extract features from</param>
+            <returns>List of features from the given image</returns>
+        </member>
+        <member name="T:NumbersRecognitionLibrary.FeaturesExtraction.IFeatureExtractor`1">
+            <summary>
+            Interface for feature extractor classes
+            </summary>
+            <typeparam name="T">Type of return features data</typeparam>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.FeaturesExtraction.IFeatureExtractor`1.ExtractFeatures(System.Drawing.Bitmap)">
+            <summary>
+            Method to extract features from the image
+            </summary>
+            <param name="bitmap">Image to extract features from</param>
+            <returns>Features extracted from the image</returns>
+        </member>
+        <member name="T:NumbersRecognitionLibrary.FeaturesExtraction.SondesFeatureExtractor">
+            <summary>
+            Contains Application of Sondes algorithm feature extraction.
+            </summary>
+        </member>
+        <member name="P:NumbersRecognitionLibrary.FeaturesExtraction.SondesFeatureExtractor.SondeOffset">
+            <summary>
+            Represents a number of pixels skipped before applying a sonde.
+            </summary>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.FeaturesExtraction.SondesFeatureExtractor.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:NumbersRecognitionLibrary.FeaturesExtraction.SondesFeatureExtractor.#ctor(System.Int32)" -->
+        <member name="M:NumbersRecognitionLibrary.FeaturesExtraction.SondesFeatureExtractor.ExtractFeatures(System.Drawing.Bitmap)">
+            <summary>
+            Extracts Application of Sondes features.
+            </summary>
+            <param name="bitmap">Image to extract features from.</param>
+            <returns>List of features for sondes application algorithm in left-top-right-bottom manner.</returns>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.FeaturesExtraction.SondesFeatureExtractor.ApplyLeftSondes(System.Drawing.Bitmap)">
+            <summary>
+            Applies sondes for left border.
+            </summary>
+            <param name="bitmap">Image object.</param>
+            <returns>List of features for left border of <paramref name="bitmap"/></returns>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.FeaturesExtraction.SondesFeatureExtractor.ApplyTopSondes(System.Drawing.Bitmap)">
+            <summary>
+            Applies sondes for top border.
+            </summary>
+            <param name="bitmap">Image object.</param>
+            <returns>List of features for top border of <paramref name="bitmap"/>.</returns>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.FeaturesExtraction.SondesFeatureExtractor.ApplyRightSondes(System.Drawing.Bitmap)">
+            <summary>
+            Applies sondes for right border.
+            </summary>
+            <param name="bitmap">Image object.</param>
+            <returns>List of features for right border of <paramref name="bitmap"/></returns>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.FeaturesExtraction.SondesFeatureExtractor.ApplyBottomSondes(System.Drawing.Bitmap)">
+            <summary>
+            Applies sondes for bottom border.
+            </summary>
+            <param name="bitmap">Image object.</param>
+            <returns>List of features for bottom border of <paramref name="bitmap"/></returns>
+        </member>
+        <member name="T:NumbersRecognitionLibrary.Helpers.ExtensionMethods">
+            <summary>
+            Static class which contains logic for helpers methods
+            </summary>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.Helpers.ExtensionMethods.GetGrayScale(System.Drawing.Color)">
+            <summary>
+            Converts color to it's grayscale 
+            </summary>
+            <param name="color">Color to convert</param>
+            <returns>Grayscale value of the color. Grayscale is represented as a float from range: 0-255</returns>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.Helpers.ExtensionMethods.AreEqual(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Compares colors
+            </summary>
+            <param name="color1">First color to compare</param>
+            <param name="color2">Second color to compare</param>
+            <returns>True if colors are the same</returns>
+        </member>
+        <member name="T:NumbersRecognitionLibrary.Helpers.ImagePreProcessing">
+            <summary>
+            Class to process images to prepare them for features extraction
+            </summary>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.Helpers.ImagePreProcessing.ResizeImage(System.Drawing.Image,System.Int32,System.Int32)">
+            <summary>
+            Returns resized image specified in <paramref name="image"/> parameter.
+            </summary>
+            <param name="image">Input image.</param>
+            <param name="width">Target width.</param>
+            <param name="height">Target height.</param>
+            <returns>Resized image.</returns>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.Helpers.ImagePreProcessing.MedianFilter(System.Drawing.Bitmap)">
+            <summary>
+            Creates image with median of nearest pixels
+            </summary>
+            <param name="bitmap">Imege to process</param>
+            <returns>Median image of the input image</returns>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.Helpers.ImagePreProcessing.NormalizePixels(System.Drawing.Bitmap,System.Single)">
+            <summary>
+            Obtains table of normalized pixel values of the image. The discrimination depends on <paramref name="grayscaleFactor"/> - pixels having higher grayscale than <paramref name="grayscaleFactor"/> are recognized as object pixels, else - background pixels.
+            </summary>
+            <param name="bitmap">Input image.</param>
+            <param name="grayscaleFactor">Discrimination factor.</param>
+            <returns>Table of normalized pixels value.</returns>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.Helpers.ImagePreProcessing.Median(System.Collections.Generic.List{System.Single})">
+            <summary>
+            Returns median value
+            </summary>
+            <param name="collection">Value to find median value</param>
+            <returns>Median value</returns>
+        </member>
+        <member name="T:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetwork">
+            <summary>
+            Class that represents neural network
+            </summary>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetwork.#ctor(System.Int32,System.Int32,System.Int32,System.Double)">
+            <summary>
+            Neural network constructor with initialization
+            </summary>
+            <param name="numInput">Length of input vector</param>
+            <param name="numHidden">Number of hidden neurons</param>
+            <param name="numOutput">Length of output vector</param>
+            <param name="roundingFactor">Value to consider result as true</param>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetwork.SetWeights(System.Double[])">
+            <summary>
+            Sets weights for the neural network
+            </summary>
+            <param name="weights">Weights array</param>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetwork.GetWeights">
+            <summary>
+            Returns weights array
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetwork.ComputeOutputs(System.Double[])">
+            <summary>
+            Compute outputs for given data
+            </summary>
+            <param name="xValues">Values to compute</param>
+            <returns>Result of neural network processing</returns>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetwork.Train(System.Double[][],System.Int32,System.Double,System.Double)">
+            <summary>
+            Trains the neural network
+            </summary>
+            <param name="trainData">Data to train</param>
+            <param name="maxEpochs">Number of learning epochs</param>
+            <param name="learnRate"></param>
+            <param name="momentum"></param>
+            <returns>Weights</returns>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetwork.Accuracy(System.Double[][])">
+            <summary>
+            Calculates the accuracy of the neural network
+            </summary>
+            <param name="testData">Data to test network with</param>
+            <returns>Accuracy of the network</returns>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetwork.MakeMatrix(System.Int32,System.Int32,System.Double)">
+            <summary>
+            Creates matrix
+            </summary>
+            <param name="rows">Number of rows</param>
+            <param name="cols">Number of columns</param>
+            <param name="v">Initialization value</param>
+            <returns>Returns created matrix</returns>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetwork.MakeMatrixRandom(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates random matrix
+            </summary>
+            <param name="rows">Number of rows</param>
+            <param name="cols">Number of columns</param>
+            <param name="seed">Seed for randomizer</param>
+            <returns>Returns created matrix</returns>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetwork.InitializeWeights">
+            <summary>
+            Initialize weights
+            </summary>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetwork.GetBestWeights(System.Collections.Generic.Dictionary{System.Double,System.Double[]})">
+            <summary>
+            Finds best weights
+            </summary>
+            <param name="weightsMap">Map with calculated weights</param>
+            <returns>Best weights array</returns>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetwork.NormalizeVector(System.Double[])">
+            <summary>
+            Normalizes vector
+            </summary>
+            <param name="vector">Vector to normalize</param>
+            <returns>Normalized vector</returns>
+        </member>
+        <member name="T:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetworkOperator">
+            <summary>
+            Class that operates neural network
+            </summary>
+        </member>
+        <member name="P:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetworkOperator.Weights">
+            <summary>
+            Array of weights for the neural network
+            </summary>
+        </member>
+        <member name="P:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetworkOperator.InputNeuronAmount">
+            <summary>
+            Number of input vectors
+            </summary>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetworkOperator.Train(System.Collections.Generic.List{System.Double[]})">
+            <summary>
+            Trains the neural network
+            </summary>
+            <param name="inputVector">List of test data input vectors</param>
+        </member>
+        <member name="M:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetworkOperator.RecognizeNumber(System.Double[])">
+            <summary>
+            Recognizes the number
+            </summary>
+            <param name="inputVector">Vector of input features</param>
+            <returns>Recognized number</returns>
+        </member>
+    </members>
+</doc>
