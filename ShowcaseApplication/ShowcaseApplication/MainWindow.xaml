@@ -1,0 +1,25 @@
+﻿<Window x:Class="WKiRO.MainApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WKiRO.MainApplication"
+        mc:Ignorable="d"
+        Title="Language recognition program" Height="720" Width="1280">
+    <Grid Margin="0,0,-8,-21">
+        <Button x:Name="OpenFileButton" Content="Sprawdź język pliku" Margin="0,225,112,0" Width="200" Click="OpenFileButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        <TextBox x:Name="ResultTextBox" Margin="10,25,466,65" TextWrapping="Wrap" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+        <TextBox x:Name="LanguagesTextBox" Height="103" Margin="0,0,85.6,65.4" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="336"/>
+        <GroupBox Header="Wybierz czynność" HorizontalAlignment="Left" Height="180" Margin="860,241,0,0" VerticalAlignment="Top" Width="336">
+            <StackPanel HorizontalAlignment="Left" Height="160" Margin="10,10,-2.8,-12.4" VerticalAlignment="Top" Width="316">
+                <RadioButton x:Name="distributionSequenceRadioButton" Content="The distribution sequence method" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="distributionSequenceRadioButton_Checked"/>
+                <RadioButton x:Name="applicationOfTheSondesRadioButton" Content="Application of the sondes method" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.12,2.803" Checked="applicationOfTheSondesRadioButton_Checked"/>
+                <RadioButton x:Name="barrFeaturesRadioButton" Content="Barr-features method" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.12,2.803" Checked="barrFeaturesRadioButton_Checked"/>
+                <Button x:Name="TrainButton" Content="Trenuj sieć" Margin="0,0,116,0" Width="200" Height="25" Click="TrainButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Top" IsEnabled="False"/>
+                <Button x:Name="TestButton" Content="Testuj sieć" Margin="0,0,116,0" Width="200" Height="25" IsEnabled="False" Click="TestButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                <Button x:Name="LoadNetworkButton" Content="Wczytaj sieć" Margin="0,0,116,0" Width="200" Height="25" Click="LoadNetworkButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Right" IsEnabled="False"/>
+                <Button x:Name="SaveNetworkButton" Content="Zapisz sieć" Margin="0,0,116,0" Width="200" Height="25" IsEnabled="False" Click="SaveNetworkButton_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>
