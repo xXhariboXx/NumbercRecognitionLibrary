@@ -18,9 +18,8 @@
     <HtmlHelpName>Documentation</HtmlHelpName>
     <Language>en-US</Language>
     <DocumentationSources>
-      <DocumentationSource sourceFile="..\NumbersRecognitionLibrary\NumbersRecognitionLibrary.csproj" />
-      <DocumentationSource sourceFile="..\NumbersRecognitionLibrary\doc\NumbersRecognitionLibrary.xml" />
-    </DocumentationSources>
+      <DocumentationSource sourceFile="..\..\NumbersRecognitionLibrary\NumbersRecognitionLibrary\NumbersRecognitionLibrary.csproj" />
+<DocumentationSource sourceFile="..\..\NumbersRecognitionLibrary\NumbersRecognitionLibrary\doc\NumbersRecognitionLibrary.xml" /></DocumentationSources>
     <HelpFileFormat>HtmlHelp1</HelpFileFormat>
     <SyntaxFilters>Standard</SyntaxFilters>
     <PresentationStyle>VS2013</PresentationStyle>
@@ -39,9 +38,10 @@
     <SdkLinkTarget>Blank</SdkLinkTarget>
     <NamespaceSummaries>
       <NamespaceSummaryItem name="(global)" isDocumented="False" />
-<NamespaceSummaryItem name="NumbersRecognitionLibrary.FeaturesExtraction" isDocumented="True">Namespace with features extracion methods</NamespaceSummaryItem>
-<NamespaceSummaryItem name="NumbersRecognitionLibrary.Helpers" isDocumented="True">Namespace with helper classes</NamespaceSummaryItem>
-<NamespaceSummaryItem name="NumbersRecognitionLibrary.NeuralNetwork" isDocumented="True">Namespace with neural network classes</NamespaceSummaryItem></NamespaceSummaries>
+      <NamespaceSummaryItem name="NumbersRecognitionLibrary.FeaturesExtraction" isDocumented="True">Namespace with features extracion methods</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="NumbersRecognitionLibrary.Helpers" isDocumented="True">Namespace with helper classes</NamespaceSummaryItem>
+      <NamespaceSummaryItem name="NumbersRecognitionLibrary.NeuralNetwork" isDocumented="True">Namespace with neural network classes</NamespaceSummaryItem>
+    </NamespaceSummaries>
   </PropertyGroup>
   <!-- There are no properties for these groups.  AnyCPU needs to appear in order for Visual Studio to perform
 			 the build.  The others are optional common platform types that may appear. -->
