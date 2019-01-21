@@ -40,6 +40,15 @@ namespace NumbersRecognitionLibrary.NeuralNetwork
 
         #region Public methods
         /// <summary>
+        /// Sets weights for the neural network
+        /// </summary>
+        /// <param name="weights">Weights to set in the neural network</param>
+        public void SetWeights(double[] weights)
+        {
+            Weights = weights;
+            neuralNetwork.SetWeights(Weights);
+        }
+        /// <summary>
         /// Trains the neural network
         /// </summary>
         /// <param name="inputVector">List of test data input vectors</param>

@@ -292,6 +292,12 @@
             Number of input vectors
             </summary>
         </member>
+        <member name="M:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetworkOperator.SetWeights(System.Double[])">
+            <summary>
+            Sets weights for the neural network
+            </summary>
+            <param name="weights">Weights to set in the neural network</param>
+        </member>
         <member name="M:NumbersRecognitionLibrary.NeuralNetwork.NeuralNetworkOperator.Train(System.Collections.Generic.List{System.Double[]})">
             <summary>
             Trains the neural network
